@@ -51,10 +51,10 @@ MonoBehaviour:
   sr: {fileID: 0}
   boxCollider: {fileID: 7772710238278302259}
   canAttack: 1
-  attackDuration: 0.8
-  attackRate: 80
-  damage: 10
-  SwingSpeed: 360
+  attackDuration: 1
+  attackRate: 130
+  damage: 15
+  SwingSpeed: 620
   SwingDegrees: 90
 --- !u!50 &8610194117385980972
 Rigidbody2D:

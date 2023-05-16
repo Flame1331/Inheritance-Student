@@ -45,7 +45,7 @@ public class ThrownWeapon : Weapon
 
     IEnumerator Duration(GameObject o)
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(2);
         Destroy(o);
     }
 }
