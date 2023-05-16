@@ -8,6 +8,7 @@ public class ThrownWeapon : Weapon
     public float ThrowSpeed = 15f;
     public GameObject Knife;
     public GameObject sprite;
+    public GameObject LaunchPoint;
 
     private void Start()
     {
@@ -16,8 +17,9 @@ public class ThrownWeapon : Weapon
         sr = GetComponentInChildren<SpriteRenderer>();
         boxCollider = GetComponent<BoxCollider2D>();
 
-            sprite.transform.position = new Vector3(0.3f, 0.0f, 0.04417548f);
-            sprite.transform.localEulerAngles = new Vector3(0, 0, 90);
+            //transform.position = new Vector3(transform.position.x-.09f, -0.08f, transform.position.x);
+            transform.localEulerAngles = new Vector3(0, 0, 90);
+        Debug.Log("Knife Start Function");
     }
 
     public override void Attack()
@@ -28,7 +30,7 @@ public class ThrownWeapon : Weapon
             EnableWeapon();
             // Set a timer to reset the weapon's attack ability.
             Invoke("AttackReset", 60f / attackRate);
-            var x = Instantiate(Knife, transform.position, transform.rotation);
+            var x = Instantiate(Knife, transform.position, LaunchPoint.transform.rotation);
 
             x.GetComponent<Projectile>().enabled = true;
             x.GetComponent<Projectile>().damage = damage;
@@ -43,7 +45,7 @@ public class ThrownWeapon : Weapon
 
     IEnumerator Duration(GameObject o)
     {
-        yield return new WaitForSeconds(15);
+        yield return new WaitForSeconds(5);
         Destroy(o);
     }
 }

@@ -47,9 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a9beb05059ee6f448097461c10e68f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  sr: {fileID: 0}
-  boxCollider: {fileID: 0}
+  rb: {fileID: 8610194117385980972}
+  sr: {fileID: 2205838236839856397}
+  boxCollider: {fileID: 7772710238278302259}
   canAttack: 1
   attackDuration: 0.2
   attackRate: 120
@@ -61,7 +61,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5372140854098638378}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1

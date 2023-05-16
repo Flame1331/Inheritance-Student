@@ -54,6 +54,9 @@ public class Weapon : MonoBehaviour
     // Enable the weapon by showing the sprite, enabling the box collider, and disabling the attack ability.
     public void EnableWeapon()
     {
+        if(sr == null) { sr = GetComponentInChildren<SpriteRenderer>(); } 
+        if(boxCollider == null) { boxCollider = GetComponent<BoxCollider2D>(); }
+        if(rb == null) { rb = GetComponent<Rigidbody2D>(); }
         canAttack = false;
         sr.enabled = true;
         boxCollider.enabled = true;

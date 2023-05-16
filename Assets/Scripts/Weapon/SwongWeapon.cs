@@ -10,12 +10,15 @@ public class SwongWeapon : Weapon
 
     public override void Attack()
     {
-        //Rotate to start pos
-        transform.localEulerAngles = new Vector3(0, 0, -SwingDegrees);
-        //activate weapon
-        EnableWeapon();
-        //swing and deactivate
-        StartCoroutine(Swing());
+        if (canAttack)
+        {
+            //Rotate to start pos
+            transform.localEulerAngles = new Vector3(0, 0, -SwingDegrees);
+            //activate weapon
+            EnableWeapon();
+            //swing and deactivate
+            StartCoroutine(Swing());
+        }
     }
 
     //swinging corutine
@@ -29,5 +32,6 @@ public class SwongWeapon : Weapon
             yield return new WaitForEndOfFrame();
         }
         DisableWeapon();
+        AttackReset();
     }
 }
